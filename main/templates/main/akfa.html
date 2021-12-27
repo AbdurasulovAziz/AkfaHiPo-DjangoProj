@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
+    <title>Leaderboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/akfa.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="header_info d-flex justify-content-center align-items-center">
+                    <div class="col" style="text-align:right">
+                        <img src="{% static 'main/img/f1_logo.png' %}" alt="" class="f1_logo">
+                    </div>
+                    <div class="col-4"><h1 class="text-center">Hipo Leaderboard</h1></div>
+                    <div class="col"><img src="{% static 'main/img/akfa_logo.png' %}" alt="" class="akfa_logo"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="data">
+                        {% for i in info_list%}
+                        <div class="item d-flex justify-content-center">
+                            {% if i.2 == counts.0 %}
+                            <div class="item_num" style="background-color: #fcda64;">{{i.0}}</div>    
+                            <div class="item_info d-flex col-md-7 " style="background-color: #fcda64;">
+                                <div class="item_name col-md-8">{{i.1}}</div>
+                                <div class="item_scores col-md-4 text-right">{{i.2}}</div>
+                            </div>
+                            {% elif i.2 == counts.1 %}
+                            <div class="item_num" style="background-color: #f2f2f2;">{{i.0}}</div>    
+                            <div class="item_info d-flex col-md-7" style="background-color: #f2f2f2;">
+                                <div class="item_name col-md-8">{{i.1}}</div>
+                                <div class="item_scores col-md-4 text-right">{{i.2}}</div>
+                            </div>
+                            {% elif i.2 == counts.2 %}
+                            <div class="item_num" style="background-color: #efaa6a;">{{i.0}}</div>    
+                            <div class="item_info d-flex col-md-7" style="background-color: #efaa6a;">
+                                <div class="item_name col-md-8">{{i.1}}</div>
+                                <div class="item_scores col-md-4">{{i.2}}</div>
+                            </div>
+                            {% else %}
+                            <div class="item_num" style="background-color: #c4c4c4;">{{i.0}}</div>    
+                            <div class="item_info d-flex col-md-7" style="background-color: #c4c4c4;">
+                                <div class="item_name col-md-8">{{i.1}}</div>
+                                <div class="item_scores col-md-4">{{i.2}}</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

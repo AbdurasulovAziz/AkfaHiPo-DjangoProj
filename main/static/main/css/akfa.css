@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.akfa_logo {
+    width: 230px;
+    height: 170px;
+}
+
+.f1_logo {
+    height: 150px;
+}
+/* SECTION */
+
+.item {
+    margin-top: 1%;
+    font-weight: 500;
+    font-family: 'Montserrat';
+}
+
+.item .item_num,
+.item .item_info {
+    padding: 1% 1.5%;
+    border-radius: 10px;
+    box-shadow: -17px 17px 13px -14px rgba(0, 0, 0, 0.15);
+}
+
+
+.item .item_info {
+    margin-left: 1%;
+}
+
+.item .item_info .item_scores {
+    text-align: right;
+}
+
