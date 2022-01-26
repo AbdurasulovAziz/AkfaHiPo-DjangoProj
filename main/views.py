@@ -29,13 +29,14 @@ def mainPage(request):                                                      #Ğ¤Ñ
         for count, i  in enumerate(sh.sheet1.get('A1:B500')):
             if count == 0: continue
             else: 
-              info_list.append([count, i[0], i[1]])
+              info_list.append([count, i[0], int(i[1])])
         counts = []
         for i in range(len(info_list)):
-          counts.append(info_list[i][2])
+          counts.append(int(info_list[i][2]))
         counts = sorted(set(counts), reverse=True)
+        print(counts)
         data = {'info_list':info_list, 'counts':counts}
-        
+        print(info_list[:3])
+        print(counts)
         return render(request, 'main/akfa.html', context=data )
         time.sleep(10)
-
